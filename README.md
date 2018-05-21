@@ -1,4 +1,68 @@
 # outils-Scrum
+<h1> Backlogs</h1>
+<table>
+<tr>
+    <th>ID </th>
+    <th>User Story</th> 
+    <th>PrioritÃ©</th>
+    <th>Cout</th>
+  <th>DifficultÃ©s</th>
+  </tr>
+ <tr>
+    <td>1</td>
+    <td>En tant que Product Owner, je veux spÃ©cifier les prioritÃ©s</td> 
+    <td>1</td>
+    <td>3</td>
+    <td>3</td>
+  </tr>
+   <tr>
+    <td>2</td>
+    <td>En tant que Scrum Master, je veux animer les rÃ©unions</td> 
+    <td>3</td>
+    <td>9</td>
+    <td>2</td>
+  </tr>
+  <tr>
+    <td>3</td>
+    <td>En tant que Scrum Master, je veux diviser les sprints</td> 
+    <td>2</td>
+    <td>11</td>
+    <td>3</td>
+  </tr> 
+  <tr>
+    <td>4</td>
+    <td>En tant Scrum Master, je veux spÃ©cifier les dates de debut et fin de chaque sprint</td> 
+    <td>5</td>
+    <td>5</td>
+    <td>1</td>
+  </tr>
+  <tr>
+    <td>5</td>
+    <td>En tant que Scrum Master, je veux voire Ã  la fin de chaque sprint les taches rÃ©alisÃ©es en non rÃ©alisÃ©e de chaque membre</td> 
+    <td>4</td>
+    <td>3</td>
+    <td>6</td>
+  </tr>
+    <tr>
+    <td>6</td>
+    <td>En tant que membre dâ€™Ã©quipe, je veux spÃ©cifier les taches rÃ©alisÃ©e</td> 
+    <td>9</td>
+    <td>5</td>
+    <td>7</td>
+  </tr>
+     <tr>
+    <td>7</td>
+    <td>En tant que Scrum Master, je veux voir Ã  la fin de chaque sprint une chart donnant deux courbes, une des taches spÃ©cifiÃ©es, le deuxiÃ¨me des taches rÃ©alisÃ©</td> 
+    <td>6</td>
+    <td>13</td>
+    <td>8</td>
+  </tr>
+      <tr>
+    <td>8</td>
+    <td>En tant que membre dâ€™Ã©quipe je veux proposer les couts de chaque User Story</td> 
+    <td>7</td>
+    <td>1</td>
+    <td>9</td>
+  </tr>
 
-IdUser storyPrioritéCout1En tant que Product Owner, je veux spécifier les priorités132En tant que Scrum Master, je veux animer les réunions393En tant que Scrum Master, je veux diviser les sprints2114En tant Scrum Master, je veux spécifier les dates de début et fin de chaque sprint555En tant que Scrum Master, je veux voire à la fin de chaque sprint les taches réalisées en non réalisée de chaque membre436En tant que membre d’équipe, je veux spécifier les taches réalisée957En tant que Scrum Master, je veux voir à la fin de chaque sprint une chart donnant deux courbes, une des taches spécifiées, le deuxième des taches réalisé6138En tant que membre d’équipe je veux proposer les coûts de chaque User Story
-71   
+</table>
