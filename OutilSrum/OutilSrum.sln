@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.27703.2018
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OutilSrum", "OutilSrum\OutilSrum.csproj", "{DA28935E-1A53-45B5-ADBF-CB1D46DD3CCB}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OutilSrum.Tests", "OutilSrum.Tests\OutilSrum.Tests.csproj", "{C6265F7A-FA05-43DA-8D0C-27F98ECC2728}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{DA28935E-1A53-45B5-ADBF-CB1D46DD3CCB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DA28935E-1A53-45B5-ADBF-CB1D46DD3CCB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DA28935E-1A53-45B5-ADBF-CB1D46DD3CCB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DA28935E-1A53-45B5-ADBF-CB1D46DD3CCB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C6265F7A-FA05-43DA-8D0C-27F98ECC2728}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C6265F7A-FA05-43DA-8D0C-27F98ECC2728}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C6265F7A-FA05-43DA-8D0C-27F98ECC2728}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C6265F7A-FA05-43DA-8D0C-27F98ECC2728}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {03A67944-CF26-45A4-8063-D77AE89C6664}
+	EndGlobalSection
+EndGlobal
