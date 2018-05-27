@@ -20,14 +20,14 @@
             </div>
 
             <div class="containerPopup">
-                @Html.LabelFor(model => model.FirstName)
-                @Html.EditorFor(model => model.FirstName, new { htmlAttributes = new { @class = "form-control", placeholder = "Login" } })
+                @Html.LabelFor(model => model.Mail, new { @class = "formLabelStyle" } )
+                @Html.EditorFor(model => model.Mail, new { htmlAttributes = new { @class = "form-control", placeholder = "adresse mail" } })
+                @Html.ValidationMessageFor(model => model.Mail, "", new { @class = "text-danger" })
+
+
+                @Html.LabelFor(model => model.FirstName, new { @class = "formLabelStyle" } )
+                @Html.EditorFor(model => model.FirstName, new { htmlAttributes = new { @class = "form-control", placeholder = "first name" } })
                 @Html.ValidationMessageFor(model => model.FirstName, "", new { @class = "text-danger" })
-
-
-                @Html.LabelFor(model => model.LastName)
-                @Html.PasswordFor(model => model.LastName, new { htmlAttributes = new { @class = "form-control", placeholder = "Mot de passe" } })
-                @Html.ValidationMessageFor(model => model.LastName, "", new { @class = "text-danger" })
 
             </div>
 

@@ -13,18 +13,25 @@ namespace OutilSrum.Controllers
             return View();
         }
 
-        public ActionResult About()
+        public ActionResult Login()
         {
-            ViewBag.Message = "Your application description page.";
+            return RedirectToAction("Accueil");
+        }
 
+        public ActionResult Accueil()
+        {
             return View();
         }
 
-        public ActionResult Contact()
+        public ActionResult Logout()
         {
-            ViewBag.Message = "Your contact page.";
-
-            return View();
+            return RedirectToAction("Index");
         }
+
+        public string Later()
+        {
+            return "To do later !";
+        }
+
     }
 }
