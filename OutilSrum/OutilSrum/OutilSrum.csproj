@@ -200,10 +200,28 @@
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\fonts\fontawesome-webfont.svg" />
+    <Content Include="Content\popup\mesStyles.css" />
+    <Content Include="Content\templateOne\animate.min.css" />
+    <Content Include="Content\templateOne\bootstrap.min.css" />
+    <Content Include="Content\templateOne\custom.css" />
+    <Content Include="Content\templateOne\et-line.css" />
+    <Content Include="Content\templateOne\fontawesome-all.min.css" />
+    <Content Include="Content\templateOne\fontGoogleApi.css" />
+    <Content Include="Content\templateOne\helper.css" />
+    <Content Include="Content\templateOne\icofont.css" />
+    <Content Include="Content\templateOne\magnific-popup.css" />
+    <Content Include="Content\templateOne\owl.carousel.min.css" />
+    <Content Include="Content\templateOne\owl.theme.default.min.css" />
+    <Content Include="Content\templateOne\style.css" />
+    <Content Include="Content\templateOne\YouTubePopUp.css" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
+    <Content Include="images\templateOne\logo1.png" />
+    <Content Include="images\templateOne\logo.png" />
+    <Content Include="images\templateOne\bg.jpg" />
     <Content Include="Models\ProjetScrum.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <LastGenOutput>ProjetScrum.Context.cs</LastGenOutput>
@@ -226,6 +244,10 @@
     <Content Include="Models\ProjetScrum.edmx.diagram">
       <DependentUpon>ProjetScrum.edmx</DependentUpon>
     </Content>
+    <Content Include="Content\fonts\fontawesome-webfont.eot" />
+    <Content Include="Content\fonts\fontawesome-webfont.ttf" />
+    <Content Include="Content\fonts\fontawesome-webfont.woff" />
+    <Content Include="Content\fonts\FontAwesome.otf" />
     <None Include="Scripts\jquery-3.3.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.3.1.js" />
     <Content Include="Scripts\jquery-3.3.1.min.js" />
@@ -237,6 +259,23 @@
     <Content Include="Scripts\jquery.validate.unobtrusive.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
     <Content Include="Scripts\modernizr-2.8.3.js" />
+    <Content Include="Scripts\popup\popup.js" />
+    <Content Include="Scripts\TemplateOne\animated.headline.js" />
+    <Content Include="Scripts\TemplateOne\bootstrap.min.js" />
+    <Content Include="Scripts\TemplateOne\isotope.pkgd.min.js" />
+    <Content Include="Scripts\TemplateOne\jquery-3.0.0.min.js" />
+    <Content Include="Scripts\TemplateOne\jquery-migrate-3.0.0.min.js" />
+    <Content Include="Scripts\TemplateOne\jquery.counterup.min.js" />
+    <Content Include="Scripts\TemplateOne\jquery.magnific-popup.min.js" />
+    <Content Include="Scripts\TemplateOne\jquery.stellar.min.js" />
+    <Content Include="Scripts\TemplateOne\jquery.waypoints.min.js" />
+    <Content Include="Scripts\TemplateOne\map.js" />
+    <Content Include="Scripts\TemplateOne\owl.carousel.min.js" />
+    <Content Include="Scripts\TemplateOne\popper.min.js" />
+    <Content Include="Scripts\TemplateOne\scripts.js" />
+    <Content Include="Scripts\TemplateOne\scrollIt.min.js" />
+    <Content Include="Scripts\TemplateOne\validator.js" />
+    <Content Include="Scripts\TemplateOne\YouTubePopUp.jquery.js" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -248,9 +287,9 @@
     <Content Include="Views\_ViewStart.cshtml" />
     <Content Include="Views\Shared\Error.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
-    <Content Include="Views\Home\About.cshtml" />
-    <Content Include="Views\Home\Contact.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\Shared\_LayoutIndex.cshtml" />
+    <Content Include="Views\Home\Accueil.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

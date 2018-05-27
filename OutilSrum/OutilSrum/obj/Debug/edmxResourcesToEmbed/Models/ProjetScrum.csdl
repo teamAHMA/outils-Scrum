@@ -1,0 +1,219 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="ProjetScrumModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="Backlog">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" />
+    <Property Name="Name" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Description" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="Date_Creation" Type="DateTime" Precision="0" />
+    <Property Name="Projet_ID" Type="Int32" />
+    <NavigationProperty Name="Projet" Relationship="Self.FK__Backlog__Projet___0AD2A005" FromRole="Backlog" ToRole="Projet" />
+    <NavigationProperty Name="Sprints" Relationship="Self.FK__Sprint__Backlog___0F975522" FromRole="Backlog" ToRole="Sprint" />
+    <NavigationProperty Name="User_Story" Relationship="Self.FK__User_Stor__Backl__145C0A3F" FromRole="Backlog" ToRole="User_Story" />
+  </EntityType>
+  <EntityType Name="Projet">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" />
+    <Property Name="Name" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Description" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="Date_start" Type="DateTime" Precision="0" />
+    <Property Name="Date_end" Type="DateTime" Precision="0" />
+    <Property Name="SrumMaster_ID" Type="Int32" />
+    <Property Name="ProductOwner_ID" Type="Int32" />
+    <NavigationProperty Name="Backlogs" Relationship="Self.FK__Backlog__Projet___0AD2A005" FromRole="Projet" ToRole="Backlog" />
+    <NavigationProperty Name="User" Relationship="Self.FK__Projet__ProductO__060DEAE8" FromRole="Projet" ToRole="Users" />
+    <NavigationProperty Name="User1" Relationship="Self.FK__Projet__SrumMast__0519C6AF" FromRole="Projet" ToRole="Users" />
+  </EntityType>
+  <EntityType Name="Sprint">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" />
+    <Property Name="Name" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="Description" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="Date_start" Type="DateTime" Precision="0" />
+    <Property Name="Date_end" Type="DateTime" Precision="0" />
+    <Property Name="Backlog_ID" Type="Int32" />
+    <NavigationProperty Name="Backlog" Relationship="Self.FK__Sprint__Backlog___0F975522" FromRole="Sprint" ToRole="Backlog" />
+    <NavigationProperty Name="Taches" Relationship="Self.FK__Tache__Sprint_ID__1B0907CE" FromRole="Sprint" ToRole="Tache" />
+    <NavigationProperty Name="User_Story" Relationship="Self.FK__User_Stor__Sprin__15502E78" FromRole="Sprint" ToRole="User_Story" />
+  </EntityType>
+  <EntityType Name="Tache">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" />
+    <Property Name="Description" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="Date_start" Type="DateTime" Precision="0" />
+    <Property Name="Date_end" Type="DateTime" Precision="0" />
+    <Property Name="Users_ID" Type="Int32" />
+    <Property Name="Sprint_ID" Type="Int32" />
+    <NavigationProperty Name="Sprint" Relationship="Self.FK__Tache__Sprint_ID__1B0907CE" FromRole="Tache" ToRole="Sprint" />
+    <NavigationProperty Name="User" Relationship="Self.FK__Tache__Users_ID__1A14E395" FromRole="Tache" ToRole="Users" />
+  </EntityType>
+  <EntityType Name="User_Story">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" />
+    <Property Name="Description" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="Cost" Type="Int32" Nullable="false" />
+    <Property Name="Priority" Type="Int32" Nullable="false" />
+    <Property Name="Backlog_ID" Type="Int32" />
+    <Property Name="Sprint_ID" Type="Int32" />
+    <NavigationProperty Name="Backlog" Relationship="Self.FK__User_Stor__Backl__145C0A3F" FromRole="User_Story" ToRole="Backlog" />
+    <NavigationProperty Name="Sprint" Relationship="Self.FK__User_Stor__Sprin__15502E78" FromRole="User_Story" ToRole="Sprint" />
+  </EntityType>
+  <EntityType Name="User">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" />
+    <Property Name="LastName" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="FirstName" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Mail" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+    <NavigationProperty Name="Projets" Relationship="Self.FK__Projet__ProductO__060DEAE8" FromRole="Users" ToRole="Projet" />
+    <NavigationProperty Name="Projets1" Relationship="Self.FK__Projet__SrumMast__0519C6AF" FromRole="Users" ToRole="Projet" />
+    <NavigationProperty Name="Taches" Relationship="Self.FK__Tache__Users_ID__1A14E395" FromRole="Users" ToRole="Tache" />
+  </EntityType>
+  <Association Name="FK__Backlog__Projet___0AD2A005">
+    <End Role="Projet" Type="Self.Projet" Multiplicity="0..1" />
+    <End Role="Backlog" Type="Self.Backlog" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Projet">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Backlog">
+        <PropertyRef Name="Projet_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Sprint__Backlog___0F975522">
+    <End Role="Backlog" Type="Self.Backlog" Multiplicity="0..1" />
+    <End Role="Sprint" Type="Self.Sprint" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Backlog">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Sprint">
+        <PropertyRef Name="Backlog_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__User_Stor__Backl__145C0A3F">
+    <End Role="Backlog" Type="Self.Backlog" Multiplicity="0..1" />
+    <End Role="User_Story" Type="Self.User_Story" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Backlog">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="User_Story">
+        <PropertyRef Name="Backlog_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Projet__ProductO__060DEAE8">
+    <End Role="Users" Type="Self.User" Multiplicity="0..1" />
+    <End Role="Projet" Type="Self.Projet" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Users">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Projet">
+        <PropertyRef Name="ProductOwner_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Projet__SrumMast__0519C6AF">
+    <End Role="Users" Type="Self.User" Multiplicity="0..1" />
+    <End Role="Projet" Type="Self.Projet" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Users">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Projet">
+        <PropertyRef Name="SrumMaster_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Tache__Sprint_ID__1B0907CE">
+    <End Role="Sprint" Type="Self.Sprint" Multiplicity="0..1" />
+    <End Role="Tache" Type="Self.Tache" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Sprint">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Tache">
+        <PropertyRef Name="Sprint_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__User_Stor__Sprin__15502E78">
+    <End Role="Sprint" Type="Self.Sprint" Multiplicity="0..1" />
+    <End Role="User_Story" Type="Self.User_Story" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Sprint">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="User_Story">
+        <PropertyRef Name="Sprint_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Tache__Users_ID__1A14E395">
+    <End Role="Users" Type="Self.User" Multiplicity="0..1" />
+    <End Role="Tache" Type="Self.Tache" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Users">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Tache">
+        <PropertyRef Name="Users_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="ProjetScrumEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Backlogs" EntityType="Self.Backlog" />
+    <EntitySet Name="Projets" EntityType="Self.Projet" />
+    <EntitySet Name="Sprints" EntityType="Self.Sprint" />
+    <EntitySet Name="Taches" EntityType="Self.Tache" />
+    <EntitySet Name="User_Story" EntityType="Self.User_Story" />
+    <EntitySet Name="Users" EntityType="Self.User" />
+    <AssociationSet Name="FK__Backlog__Projet___0AD2A005" Association="Self.FK__Backlog__Projet___0AD2A005">
+      <End Role="Projet" EntitySet="Projets" />
+      <End Role="Backlog" EntitySet="Backlogs" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Sprint__Backlog___0F975522" Association="Self.FK__Sprint__Backlog___0F975522">
+      <End Role="Backlog" EntitySet="Backlogs" />
+      <End Role="Sprint" EntitySet="Sprints" />
+    </AssociationSet>
+    <AssociationSet Name="FK__User_Stor__Backl__145C0A3F" Association="Self.FK__User_Stor__Backl__145C0A3F">
+      <End Role="Backlog" EntitySet="Backlogs" />
+      <End Role="User_Story" EntitySet="User_Story" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Projet__ProductO__060DEAE8" Association="Self.FK__Projet__ProductO__060DEAE8">
+      <End Role="Users" EntitySet="Users" />
+      <End Role="Projet" EntitySet="Projets" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Projet__SrumMast__0519C6AF" Association="Self.FK__Projet__SrumMast__0519C6AF">
+      <End Role="Users" EntitySet="Users" />
+      <End Role="Projet" EntitySet="Projets" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Tache__Sprint_ID__1B0907CE" Association="Self.FK__Tache__Sprint_ID__1B0907CE">
+      <End Role="Sprint" EntitySet="Sprints" />
+      <End Role="Tache" EntitySet="Taches" />
+    </AssociationSet>
+    <AssociationSet Name="FK__User_Stor__Sprin__15502E78" Association="Self.FK__User_Stor__Sprin__15502E78">
+      <End Role="Sprint" EntitySet="Sprints" />
+      <End Role="User_Story" EntitySet="User_Story" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Tache__Users_ID__1A14E395" Association="Self.FK__Tache__Users_ID__1A14E395">
+      <End Role="Users" EntitySet="Users" />
+      <End Role="Tache" EntitySet="Taches" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

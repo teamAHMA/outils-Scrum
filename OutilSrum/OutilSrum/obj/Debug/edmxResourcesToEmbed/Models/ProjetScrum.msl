@@ -1,0 +1,75 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="ProjetScrumModelStoreContainer" CdmEntityContainer="ProjetScrumEntities">
+    <EntitySetMapping Name="Backlogs">
+      <EntityTypeMapping TypeName="ProjetScrumModel.Backlog">
+        <MappingFragment StoreEntitySet="Backlog">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="Date_Creation" ColumnName="Date_Creation" />
+          <ScalarProperty Name="Projet_ID" ColumnName="Projet_ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Projets">
+      <EntityTypeMapping TypeName="ProjetScrumModel.Projet">
+        <MappingFragment StoreEntitySet="Projet">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="Date_start" ColumnName="Date_start" />
+          <ScalarProperty Name="Date_end" ColumnName="Date_end" />
+          <ScalarProperty Name="SrumMaster_ID" ColumnName="SrumMaster_ID" />
+          <ScalarProperty Name="ProductOwner_ID" ColumnName="ProductOwner_ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Sprints">
+      <EntityTypeMapping TypeName="ProjetScrumModel.Sprint">
+        <MappingFragment StoreEntitySet="Sprint">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="Date_start" ColumnName="Date_start" />
+          <ScalarProperty Name="Date_end" ColumnName="Date_end" />
+          <ScalarProperty Name="Backlog_ID" ColumnName="Backlog_ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Taches">
+      <EntityTypeMapping TypeName="ProjetScrumModel.Tache">
+        <MappingFragment StoreEntitySet="Tache">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="Date_start" ColumnName="Date_start" />
+          <ScalarProperty Name="Date_end" ColumnName="Date_end" />
+          <ScalarProperty Name="Users_ID" ColumnName="Users_ID" />
+          <ScalarProperty Name="Sprint_ID" ColumnName="Sprint_ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="User_Story">
+      <EntityTypeMapping TypeName="ProjetScrumModel.User_Story">
+        <MappingFragment StoreEntitySet="User_Story">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="Cost" ColumnName="Cost" />
+          <ScalarProperty Name="Priority" ColumnName="Priority" />
+          <ScalarProperty Name="Backlog_ID" ColumnName="Backlog_ID" />
+          <ScalarProperty Name="Sprint_ID" ColumnName="Sprint_ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Users">
+      <EntityTypeMapping TypeName="ProjetScrumModel.User">
+        <MappingFragment StoreEntitySet="Users">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="LastName" ColumnName="LastName" />
+          <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+          <ScalarProperty Name="Mail" ColumnName="Mail" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>
