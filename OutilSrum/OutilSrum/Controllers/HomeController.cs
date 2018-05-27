@@ -33,5 +33,18 @@ namespace OutilSrum.Controllers
             return "To do later !";
         }
 
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult Inscription([Bind(Include = "FirstName,LastName,Mail")]Models.User u)
+        {
+            if (ModelState.IsValid)
+            {
+                // to do later !
+                return RedirectToAction("Accueil");
+            }
+            return RedirectToAction("Index", u);
+        }
+
     }
 }

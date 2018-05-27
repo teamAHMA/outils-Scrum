@@ -39,31 +39,40 @@
     }
 </div>
 <!--end login-->
+
 <!--inscription-->
 <section id="inscription">
     <br /><br /><br /><br /><br /><br />
     <div class="offset-md-1 col-md-6">
         <h1 class="h11">Inscrivez-vous</h1>
     </div>
-    <form class="form-group" method="post" action="#">
+
+    @using (Html.BeginForm("Inscription", "Home", FormMethod.Post))
+    {
+        @Html.AntiForgeryToken()
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+       
         <div class="row">
             <div class="offset-md-3 col-md-6">
-                <label for="uname"><b>Nom</b></label>
-                <input type="text" placeholder="votre nom" name="uname" required class="form-control" />
+                @Html.LabelFor(model => model.FirstName, new { @class = "formLabelStyle" })
+                @Html.EditorFor(model => model.FirstName, new { htmlAttributes = new { @class = "form-control", placeholder = "votre prénom" } })
+                @Html.ValidationMessageFor(model => model.FirstName, "", new { @class = "text-danger" })
             </div>
         </div>
         <br />
         <div class="row">
             <div class="offset-md-3 col-md-6">
-                <label for="uname"><b>Prénom</b></label>
-                <input type="text" placeholder="votre prénom" name="uname" required class="form-control" />
+                @Html.LabelFor(model => model.LastName, new { @class = "formLabelStyle" })
+                @Html.EditorFor(model => model.LastName, new { htmlAttributes = new { @class = "form-control", placeholder = "votre nom" } })
+                @Html.ValidationMessageFor(model => model.LastName, "", new { @class = "text-danger" })
             </div>
         </div>
         <br />
         <div class="row">
             <div class="offset-md-3 col-md-6">
-                <label for="uname"><b>Login</b></label>
-                <input type="text" placeholder="Enter Username" name="login" required class="form-control" />
+                @Html.LabelFor(model => model.Mail, new { @class = "formLabelStyle" })
+                @Html.EditorFor(model => model.Mail, new { htmlAttributes = new { @class = "form-control", placeholder = "adresse mail" } })
+                @Html.ValidationMessageFor(model => model.Mail, "", new { @class = "text-danger" })
             </div>
         </div>
         <br />
@@ -83,33 +92,10 @@
         <br />
         <div class="row">
             <div class="offset-md-3 col-md-6">
-                <label for="uname"><b>Email</b></label>
-                <input type="email" placeholder="adresse mail" name="uname" required class="form-control" />
-            </div>
-        </div>
-        <br />
-        <div class="row">
-            <div class="offset-md-3 col-md-6">
-                <label for="uname"><b>Ville</b></label>
-                <select name="ville" required class="form-control">
-                    <option>Safi</option>
-                </select>
-            </div>
-        </div>
-        <br />
-        <div class="row">
-            <div class="offset-md-3 col-md-6">
-                <label for="uname"><b>Téléphone</b></label>
-                <input type="number" placeholder="numéro de téléphone" name="uname" required class="form-control" />
-            </div>
-        </div>
-        <br />
-        <div class="row">
-            <div class="offset-md-3 col-md-6">
                 <button type="submit" name="submin" class="btn btn-primary">Send</button>
             </div>
         </div>
-    </form>
+    }
 </section>
 <br /><br /><br /><br /><br /><br /><br />
 <!--end inscription-->
